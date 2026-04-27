@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <!-- خلفية متدرجة -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c4a6e"/>
+      <stop offset="50%" stop-color="#0369a1"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    
+    <!-- تدرج معدني للمضخة -->
+    <linearGradient id="pumpMetal" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e2e8f0"/>
+      <stop offset="50%" stop-color="#94a3b8"/>
+      <stop offset="100%" stop-color="#64748b"/>
+    </linearGradient>
+    
+    <!-- تدرج للمياه -->
+    <linearGradient id="water" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+    
+    <!-- ظل خارجي -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+    
+    <!-- توهج للمياه -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- خلفية دائرية -->
+  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
+  
+  <!-- إطار خارجي -->
+  <rect x="20" y="20" width="472" height="472" rx="76" fill="none" stroke="#ffffff" stroke-opacity="0.2" stroke-width="4"/>
+  
+  <!-- مجموعة المضخة -->
+  <g filter="url(#shadow)" transform="translate(256 220)">
+    
+    <!-- قاعدة المضخة -->
+    <ellipse cx="0" cy="85" rx="70" ry="20" fill="#0c4a6e" opacity="0.8"/>
+    
+    <!-- جسم المضخة الرئيسي -->
+    <rect x="-50" y="-20" width="100" height="90" rx="12" fill="url(#pumpMetal)"/>
+    
+    <!-- منفذ الدخول (يسار) -->
+    <rect x="-80" y="5" width="35" height="35" rx="6" fill="url(#pumpMetal)"/>
+    <ellipse cx="-80" cy="22" rx="18" ry="18" fill="url(#water)" filter="url(#glow)"/>
+    
+    <!-- منفذ الخروج (يمين) -->
+    <rect x="45" y="5" width="35" height="35" rx="6" fill="url(#pumpMetal)"/>
+    <ellipse cx="80" cy="22" rx="18" ry="18" fill="url(#water)" filter="url(#glow)"/>
+    
+    <!-- غطاء المضخة -->
+    <rect x="-40" y="-35" width="80" height="20" rx="6" fill="#64748b"/>
+    
+    <!-- مروحة/عجلة المضخة -->
+    <circle cx="0" cy="25" r="35" fill="#0f172a"/>
+    <g fill="url(#water)">
+      <path d="M0 5 L-15 30 L0 25 L15 30 Z" transform="rotate(0)"/>
+      <path d="M0 5 L-15 30 L0 25 L15 30 Z" transform="rotate(72)"/>
+      <path d="M0 5 L-15 30 L0 25 L15 30 Z" transform="rotate(144)"/>
+      <path d="M0 5 L-15 30 L0 25 L15 30 Z" transform="rotate(216)"/>
+      <path d="M0 5 L-15 30 L0 25 L15 30 Z" transform="rotate(288)"/>
+    </g>
+    
+    <!-- محور المروحة -->
+    <circle cx="0" cy="25" r="10" fill="#e2e8f0"/>
+    <circle cx="0" cy="25" r="5" fill="#0f172a"/>
+    
+  </g>
+  
+  <!-- ترس (رمز الورشة) -->
+  <g transform="translate(160 100)" fill="#ffffff" opacity="0.9">
+    <circle r="35" fill="none" stroke="#ffffff" stroke-width="4"/>
+    <g>
+      <rect x="-6" y="-48" width="12" height="16" rx="3"/>
+      <rect x="-6" y="32" width="12" height="16" rx="3"/>
+      <rect x="-48" y="-6" width="16" height="12" rx="3"/>
+      <rect x="32" y="-6" width="16" height="12" rx="3"/>
+    </g>
+    <g transform="rotate(45)">
+      <rect x="-6" y="-48" width="12" height="16" rx="3"/>
+      <rect x="-6" y="32" width="12" height="16" rx="3"/>
+      <rect x="-48" y="-6" width="16" height="12" rx="3"/>
+      <rect x="32" y="-6" width="16" height="12" rx="3"/>
+    </g>
+    <circle r="15" fill="#0369a1"/>
+  </g>
+  
+  <!-- مفتاح ربط (رمز التصليح) -->
+  <g transform="translate(350 100)" stroke="#ffffff" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.9">
+    <path d="M-25 25 L25 -25"/>
+    <circle cx="-28" cy="28" r="15" fill="#ffffff"/>
+    <circle cx="-28" cy="28" r="8" fill="#0369a1"/>
+    <path d="M32 -32 L45 -45 L55 -35 L42 -22" fill="#ffffff"/>
+  </g>
+  
+  <!-- قطرات المياه -->
+  <g fill="#38bdf8" opacity="0.8">
+    <ellipse cx="80" cy="280" rx="6" ry="10"/>
+    <ellipse cx="100" cy="295" rx="5" ry="8"/>
+    <ellipse cx="432" cy="280" rx="6" ry="10"/>
+    <ellipse cx="412" cy="295" rx="5" ry="8"/>
+  </g>
+  
+  <!-- موجة مائية -->
+  <path d="M100 330 Q150 350 200 330 Q250 310 300 330 Q350 350 400 330" 
+        stroke="#38bdf8" stroke-width="4" fill="none" opacity="0.6"/>
+  
+  <!-- النص -->
+  <text x="256" y="400" text-anchor="middle" font-family="Cairo, Arial, sans-serif" 
+        font-size="42" font-weight="800" fill="#ffffff" filter="url(#shadow)">ورشة شويخ</text>
+  
+  <!-- خط تحت النص -->
+  <rect x="156" y="415" width="200" height="4" rx="2" fill="#38bdf8"/>
+  
+  <!-- عنوان ثانوي -->
+  <text x="256" y="450" text-anchor="middle" font-family="Arial, sans-serif" 
+        font-size="18" font-weight="400" fill="#7dd3fc" opacity="0.9">تصليح مضخات المياه</text>
+  
+</svg>

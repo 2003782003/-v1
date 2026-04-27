@@ -1,0 +1,14 @@
+{
+  "name": "ورشة شويخ",
+  "short_name": "ورشة شويخ",
+  "description": "نظام إدارة تصليح المحركات",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "dir": "rtl",
+  "lang": "ar",
+  "icons": [
+    { "src": "/static/logo.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
